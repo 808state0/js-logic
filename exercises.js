@@ -1,22 +1,22 @@
 /*
 If statements - Evaluates (or checks) a condition. If the condition is true, any statements in the subsequent code block are executed
 */
-var today = new Date();
+/*var today = new Date();
 
 if(today === "Friday"){
   return "Let's Party!";
-};
+}
 
-/*
+
 If/else statements = Evaluates (or checks) a condition. If the condition is true, the first code block is executed. If the condition is false, the second code block is executed instead.
-*/
+
 
 if(today === "Friday"){
   return "Let's Party!";
 }else{
   return "Get back to coding!";
-};
-
+}
+*/
 
 /*
  * #1
@@ -28,6 +28,15 @@ if(today === "Friday"){
  *
  * The function will return true if the number passed into the function is equal to or greater than Hawaii's voting age. Console.log your result.
 */
+function canVote(age){
+  if(age >= 18){
+    return  true;
+  
+}else{
+    return false;
+}
+}
+console.log(canVote(2));
 
 
 /*
@@ -41,6 +50,14 @@ if(today === "Friday"){
  * The function will return the message: "Login Success!", if the string passed into the function is "test1234"
  * Console.log your result.
 */
+function login(password){
+  if(password >= "test1234"){
+    return "Login Success!";
+  }else{
+    return "Login Failed";
+  }
+}
+console.log(login("test1234"));
 
 
 /*
@@ -55,7 +72,14 @@ if(today === "Friday"){
  * The function will return true if the first number is greater than the second.
  * Console.log your result.
 */
-
+function isGreaterThan(first,second){
+  if (first > second){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(isGreaterThan(40,20));
 
 /*
  * #4
@@ -68,6 +92,14 @@ if(today === "Friday"){
  * The function will return true if the value passed into the function is "true".
  * Console.log your result.
 */
+function mustBeTrue(boo){
+  if (boo === true){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(mustBeTrue(true));
 
 
 /*
@@ -81,8 +113,14 @@ if(today === "Friday"){
  * The function will return the message "Word to Big Bird!", if the string passed into the function is a three-letter word. 
  * Console.log your result.
 */
-
-
+function bigBird(word){
+  if (word.length === word[3]){
+    return "Word to Big Bird!";
+  }else{
+    return "false";
+  }
+}
+console.log(bigBird("wor"));
 /*
  * #6
  * Function - isEqual
@@ -95,6 +133,15 @@ if(today === "Friday"){
  * If the strings are equal, the function will return the message "You look mahvelous!" Otherwise, return the message: "I don't know who you are anymore." 
  * Console.log your result.
 */
+function isEqual(first,second){
+  if (first === second) {
+    return "You look mahvelous!";
+  }else{
+    return "I dont know who you are anymore";
+  }
+
+}
+console.log(isEqual("hi","hi"));
 
 
 /*
@@ -109,6 +156,15 @@ if(today === "Friday"){
  * If the strings are not equal, the function will return the message "Opposites do attract." Otherwise, return the message: "Cause it's like you're my mirror." 
  * Console.log your result.
 */
+function notEqual(first,second){
+  if (first === second){
+    return "Opposites do attract";
+  }else{
+    return  "Cause it's like you're my mirror.";
+  }
+}
+console.log(notEqual("Hello","hi"));
+
 
 
 /*
@@ -122,6 +178,14 @@ if(today === "Friday"){
  * The function will return true if the number passed into the function is greater than 100, otherwise it will return false.
  * Console.log your result.
 */ 
+function spareChange(money){
+  if (money > 100){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(spareChange(49));
 
 
 /*
@@ -137,8 +201,14 @@ if(today === "Friday"){
  * The function will return true if the sum of all the number values is greater than 30, otherwise it will return false.
  * Console.log your result.
 */ 
-
-
+function dirty30(one,two,three){
+  if (one + two + three > 30){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(dirty30(6,13,29));
 /*
  * #10
  * Function - evenStevens
@@ -150,6 +220,14 @@ if(today === "Friday"){
  * The function will return true if the number passed in is an even integer, otherwise it will return false.
  * Console.log your result.
 */ 
+function evenStevens(num){
+  if (num%2 == 0){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(evenStevens(3));
 
 
 /*
@@ -163,8 +241,15 @@ if(today === "Friday"){
  *
  * If BOTH values are 21 or over, the function will return the message: "Welcome to the Legends Lounge." Otherwise, it will return the message: "Chuck E Cheese is across the street."
  * Console.log your result.
-*/ 
-
+ */
+ function daClub(cover,age){
+  if (cover,age >= 21){
+    return "Welcome to the Legends Lounge.";
+  }else{
+    return "Chuck E Cheese is across the street.";
+  }
+ }
+ console.log(daClub(45,21));
 
 /*
  * #12
@@ -178,6 +263,14 @@ if(today === "Friday"){
  * If EITHER the number value is greater than or equal to 120 or the boolean value is true, then the function will return the message: "Congratulations on a job well done." Otherwise, return the message: "See you in summer school."
  * Console.log your result.
 */ 
+function graduation(credits,thesis){
+  if (credits >= 120, thesis >= 120){
+    return "Congratulations on a job well done.";
+  }else{
+    return "See you in summer school.";
+  }
+}
+console.log(graduation(500,1000));
 
 
 /*
@@ -191,7 +284,19 @@ if(today === "Friday"){
  * The function will return the message: "You are riding Honolulu's Rail.", if the number value is less than 50, otherwise it will return the message: "You are riding an Amtrak.", if the number value is less than 100, and return the message: "Now you ballin' in the Shinkansen!", if the number value is greater than or equal to 100.
  * Console.log your result.
 */ 
-
+function moneyTrain(speed){
+  if (speed < 50){
+    return  "You are riding Honolulu's Rail.";
+  }else{
+    return "You are riding Amtrak.";
+  }
+  if (speed <= 100){
+    return  "Now you ballin";
+  }else{
+    return  "You are riding Amtrak. ";
+  }
+}
+console.log(moneyTrain(10000));
 
 /*
  * #14
