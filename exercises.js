@@ -114,10 +114,10 @@ console.log(mustBeTrue(true));
  * Console.log your result.
 */
 function bigBird(word){
-  if (word.length === word[3]){
+  if (word.length === 3){
     return "Word to Big Bird!";
   }else{
-    return "false";
+    return "you got it wrong!";
   }
 }
 console.log(bigBird("wor"));
@@ -141,7 +141,7 @@ function isEqual(first,second){
   }
 
 }
-console.log(isEqual("hi","hi"));
+console.log(isEqual("hi","hello"));
 
 
 /*
@@ -163,7 +163,7 @@ function notEqual(first,second){
     return  "Cause it's like you're my mirror.";
   }
 }
-console.log(notEqual("Hello","hi"));
+console.log(notEqual("hi","hi"));
 
 
 
@@ -221,7 +221,7 @@ console.log(dirty30(6,13,29));
  * Console.log your result.
 */ 
 function evenStevens(num){
-  if (num%2 == 0){
+  if (num%2 === 0){
     return true;
   }else{
     return false;
@@ -264,13 +264,13 @@ console.log(evenStevens(3));
  * Console.log your result.
 */ 
 function graduation(credits,thesis){
-  if (credits >= 120, thesis >= 120){
+  if (credits >= 120 || thesis === 120){
     return "Congratulations on a job well done.";
   }else{
     return "See you in summer school.";
   }
 }
-console.log(graduation(500,1000));
+console.log(graduation(500,"true"));
 
 
 /*
@@ -285,15 +285,10 @@ console.log(graduation(500,1000));
  * Console.log your result.
 */ 
 function moneyTrain(speed){
-  if (speed < 50){
+  if (speed < 50, speed <= 100){
     return  "You are riding Honolulu's Rail.";
   }else{
     return "You are riding Amtrak.";
-  }
-  if (speed <= 100){
-    return  "Now you ballin";
-  }else{
-    return  "You are riding Amtrak. ";
   }
 }
 console.log(moneyTrain(10000));
@@ -310,9 +305,20 @@ console.log(moneyTrain(10000));
  * Console.log budget and doughnutBought.
  * Invoke your function again.
  * Console.log budget and doughnutBought again.
-*/ 
+*/
+var budget = 100;
+var doughnutPrice = 5;
+var doughnutBought = 0;
+function buyDoughnut(){
+if (budget >= doughnutPrice){
+  budget = budget - doughnutPrice;
+  doughnutBought++;
+}
 
-
+}
+buyDoughnut();
+console.log("buy", budget);
+console.log( "buy", doughnutBought);
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
 
@@ -320,7 +326,7 @@ The for loop is made up for 3 parts:
 
 1) Initialization (i.e. var i = 0;)
 2) Condition (i.e. i<arr.length;)
-3) Update (i.e. i++)
+3) Update (i.e. li++)
 */
 
 var toyotaModels = ["Corolla", "Prius", "4 Runner", "Camry", "Land Cruiser"];
@@ -339,14 +345,18 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 4"
  * "Player: 5"
 */
-
-
+var players = ["1","2", "3", "4", "5"];
+for (var i = 0; i<players.length; i++){
+  console.log("Player:" + " " + players[i]);
+}
 /* 
  * #16
  * Create a for loop that will iterate and console.log each item in the array below:
 */
   var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
-
+for (var i = 0; i<myFavFoods.length; i++){
+  console.log(myFavFoods[i]);
+}
 
 /*
  * #17
@@ -362,6 +372,15 @@ for (var i = 0; i<toyotaModels.length; i++){
  * The function will loop through and add up all the values in the array that is passed into the function and return the total.
  * Console.log your result.
 */
+var numArray = [1,2,3,4,5];
+var total = 0; 
+function sumItUp(arr){
+  for (var i = 0; i<arr.length; i++)
+     total += arr[i];
+   return total;
+}
+
+console.log(sumItUp(numArray));
 
 
 /*
@@ -379,7 +398,21 @@ for (var i = 0; i<toyotaModels.length; i++){
   var players = ["LeBron", "Linsanity", "Kawhi", "Kobe", "Yao Ming", "Bird", "Jordan"];
   var east = [];
   var west = [];
-
+function allStars(ballers){
+  for (var i = 0; i<ballers.length; i++){
+    // console.log(ballers[i]);
+    if (i%2 === 0){
+      // console.log(i);
+    east.push(ballers[i]);
+    }else{
+     west.push(ballers[i]);
+    }
+  }
+}
+    allStars(players);
+ 
+console.log(east);
+console.log(west);
 /*
  * #19
  * Function - subways
@@ -389,12 +422,21 @@ for (var i = 0; i<toyotaModels.length; i++){
  *  @return Datatype: Array
  *
  * The function will loop through the array value and replace all the odd numbered indexed items with "Classic Tuna".
- * Console.log your results.
+ * Console.log your reslts.
 */ 
 
   var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
-
-
+function subways(special){
+  for(i = 0; i<special.length; i++){
+    // console.log(special[i]);
+    if(i%2 === 1){
+       special[i] = "Classic Tuna";
+    }
+}
+    return special;
+}
+subways(subOftheDay);
+console.log(subOftheDay);
 /*
 Final Boss
  * #20
@@ -407,9 +449,20 @@ Final Boss
  *  The function will loop through the string value and put all the letters into an array, except for the letter "A" and "a". We don't want no stinking "A" or "a" in our array. Test your function with the `phrase` below!
 */
 
-  var phrase = "An apple a day keeps Alice feeling awesome!"
+  var phrase = "An apple a day keeps Alice feeling awesome!";
   
-
+function removeLetter(str){
+  var newArray = [];
+  for(var i = 0; i<str.length; i++){
+    // console.log(str[i]);
+    if(str[i] !== "a" && str[i] !== "A"){
+      newArray.push(str[i]);
+    }
+  }
+  console.log(newArray);
+  return newArray;
+}
+removeLetter(phrase);
 
 
 
